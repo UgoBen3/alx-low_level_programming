@@ -1,5 +1,5 @@
-#include <stdio>
-#include <stdlib>
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * main- Enter main
  * Desccription: prints all possible different combinations of three digits
