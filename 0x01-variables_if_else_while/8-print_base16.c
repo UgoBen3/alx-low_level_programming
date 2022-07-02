@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <time.h>
 #include <stdlib.h>
 /**
  * main- Entry main
@@ -9,7 +8,8 @@
  */
 int main(void)
 {
-i	char ch;
+	char ch;
+
 	for (ch = '0'; ch <= '9'; ch++)
 	{
 		putchar(ch);
