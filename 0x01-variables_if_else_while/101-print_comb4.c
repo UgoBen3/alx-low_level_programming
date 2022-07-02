@@ -18,6 +18,8 @@ int main(void)
 		while (d < 10)
 		{
 			c = 0;
+
+			while (c < 10)
 			{
 				if (c != d && d != e && e < d && d < c)
 				{
