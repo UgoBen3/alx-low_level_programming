@@ -12,6 +12,7 @@ void print_alphabet_x10(void)
 	{
 		for (times = 0; times < 10; times++)
 		{
+			_putchar(alphabet);
 		}
 	}
 	_putchar('\n');
