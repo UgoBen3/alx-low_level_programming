@@ -1,19 +1,19 @@
 #include "main.h"
 /**
- * print _sign- entry point
- * @c : prints the sign of a number.
+ * print_sign- entry point
+ * @n : prints the sign of a number.
  * Return: 0 or 1
  */
-int _isalpha(int c)
+int print_sign(int n)
 {
 	int num;
 
-	if (c > 0)
+	if (n > 0)
 	{
 		num = 1;
 		_putchar('+');
 	}
-	else if (c == 0)
+	else if (n == 0)
 	{
 		num = 0;
 		_putchar('0');
