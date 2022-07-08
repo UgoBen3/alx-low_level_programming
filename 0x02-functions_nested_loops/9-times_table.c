@@ -5,39 +5,39 @@
  */
 void times_table(void)
 {
-	int u = 0;
-	int v;
-	int times;
+	int a = 0;
+	int b;
+	int mul;
 
-	while (u <= 9)
+	while (a <= 9)
 	{
-		int v = 0;
+		b = 0;
 
-		while (v <= 9)
+		while (b <= 9)
 		{
-			times = u * v;
-			if (v == 0)
+			mul = a * b;
+			if (b == 0)
 			{
-				_putchar('0' + times);
+				_putchar('0' + mul);
 			}
-			else if (times < 10)
+			else if (mul < 10)
 			{
 				_putchar(' ');
-				_putchar('0' + times);
+				_putchar('0' + mul);
 			}
 			else
 			{
-				_putchar('0' + times / 10);
-				_putchar('0' + times % 10);
+				_putchar('0' + mul / 10);
+				_putchar('0' + mul % 10);
 			}
-			if (v < 9)
+			if (b < 9)
 			{
 				_putchar(',');
 				_putchar(' ');
 			}
-			v++;
+			b++;
 		}
 		_putchar('\n');
-		u++;
+		a++;
 	}
 }
