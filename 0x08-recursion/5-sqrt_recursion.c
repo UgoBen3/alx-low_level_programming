@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _sqrt_recursion- returns the natural square root of a number.
+ * power_operation- returns the natural square root of a number.
  * @n: number
  * @a: iterator
  * Return: square root or -1
@@ -8,9 +8,9 @@
 int power_operation(int n, int a)
 {
 
-	if (a % (n/a) == 0)
+	if (a % (n / a) == 0)
 	{
-		if (a * (n/a) == n)
+		if (a * (n / a) == n)
 			return (a);
 		else
 			return (-1);
