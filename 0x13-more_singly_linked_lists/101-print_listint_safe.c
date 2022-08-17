@@ -1,27 +1,67 @@
 #include "lists.h"
-#include <stdio.h>
 
 /**
- * print_listint_safe - Prints a linked list containing integers
- * @h: Address of the first item in the list
- *
- * Return: Length of the linked list
+ * free_listp - frees a linked list
+ * @head: head of a list.
+ * Return: no return.
  */
-size_t print_listint_safe(const listint_t *h)
+void free_listp(listp_t **head)
 {
-	size_t len = 0;
+	listp_t *temp;
+	listp_t *curr;
 
-	while (h)
+	if (head != NULL)
 	{
-		printf("[%p] %d\n", (void *)h, h->n);
-		len++;
-
-		if ((void *)h->next >= (void *)h)
+		curr = *head;
+		while ((temp = curr) != NULL)
 		{
-			printf("-> [%p] %d\n", (void *)h->next, h->next->n);
-			return (len);
+			curr = curr->next;
+			free(temp);
 		}
-		h = h->next;
+		*head = NULL;
 	}
-	return (len);
+}
+
+/**
+ * print_listint_safe - prints a linked list.
+ * @head: head of a list.
+ * Return: number of nodes in the list.
+ */
+size_t print_listint_safe(const listint_t *head)
+{
+	size_t nnodes = 0;
+	listp_t *hptr, *new, *add;
+
+	hptr = NULL;
+	while (head != NULL)
+	{
+		new = malloc(sizeof(listp_t));
+
+		if (new == NULL)
+			exit(98);
+
+		new->p = (void *)head;
+		new->next = hptr;
+		hptr = new;
+
+		add = hptr;
+
+		while (add->next != NULL)
+		{
+			add = add->next;
+			if (head == add->p)
+			{
+				printf("-> [%p] %d\n", (void *)head, head->n);
+				free_listp(&hptr);
+				return (nnodes);
+			}
+		}
+
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
+		nnodes++;
+	}
+
+	free_listp(&hptr);
+	return (nnodes);
 }
